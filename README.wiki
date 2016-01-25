@@ -1,0 +1,16 @@
+A tiny Python script to export the content of an Etherpad in a form that is suitable for posting as a wiki page, avoiding the issue that subsequent lines blend into one because MediaWiki treats newlines differently.
+
+Basically, it adds "<code><br /></code>" tags to the end of every line of the Etherpad, except those where MediaWiki will keep the line break anyway when parsing it as wikitext (e.g. after a line that starts with "*").
+
+Optionally it embeds pages of a PDF file from Wikimedia Commons where indicated ("[slide n]" is replaced by an embedding of page n).
+
+Developed to publish [https://meta.wikimedia.org/wiki/WMF_Metrics_and_activities_meetings/Quarterly_reviews minutes and slides] from the Wikimedia Foundation's quarterly review team meetings.
+
+
+'''Usage''':  etherpad2wiki.py sourceurl outputfile.txt [slidesfilename]
+
+
+Based on https://github.com/tbayer/wikibrs
+
+To avoid getting yourself into trouble when using this for Wikipedia articles, consider looking at the essay "[https://en.wikipedia.org/wiki/Wikipedia:Don't_use_line_breaks Don't use line breaks"] first ;)
+
